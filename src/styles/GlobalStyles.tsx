@@ -8,7 +8,8 @@ const globalStyles = css`
 
   html,
   body {
-    height: auto;
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif !important;
@@ -35,7 +36,8 @@ const globalStyles = css`
   #root {
     display: flex;
     flex: 1;
-    height: 100%;
+    min-height: 100vh;
+    width: 100%;
   }
 
   /* ::-webkit-scrollbar {

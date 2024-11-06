@@ -23,7 +23,10 @@ export default function LanguageSelector() {
 
   return (
     <SelectorContainer>
-      <LanguageButton onClick={toggleDropdown} onBlur={() => setIsOpen(false)}>
+      <LanguageButton
+        onClick={toggleDropdown}
+        onMouseDown={e => e.preventDefault()}
+      >
         {selectedLanguage}
       </LanguageButton>
       {isOpen && (
