@@ -1,0 +1,5 @@
+export { default as Header } from "components/Header/Header"
+export { default as Navbar } from "components/Navbar/Navbar"
+export { default as Details } from "components/Details/Details"
+export { default as LanguageSelector } from "components/LanguageSelector/LanguageSelector"
+export { default as Footer } from "components/Footer/Footer"
