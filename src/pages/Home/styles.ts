@@ -5,7 +5,6 @@ import { colors } from "styles/colors"
 export const HomeWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
   width: 100%;
   margin: 50px 60px;
   gap: 70px;
@@ -25,13 +24,11 @@ export const FirstPart = styled.div`
   justify-content: space-between;
   height: fit-content;
   position: relative;
-  z-index: 1000;
   width: 100%;
 `
 
 export const Row = styled.div`
   display: flex;
-  height: 120px;
 `
 
 export const Column = styled.div`
@@ -57,22 +54,39 @@ export const StyledTitle = styled.h2`
 `
 
 export const FirstImage = styled.img`
+  position: relative;
   width: 358px;
   height: 664px;
   border-radius: 10px;
+
+  @media(max-width: 768px) {
+    display: none;
+  }
 `
 
 export const SecondImage = styled.img`
+  position: relative;
   width: 358px;
   height: 480px;
   border-radius: 10px;
+
+  @media(max-width: 768px) {
+    display: none;
+  }
 `
 
 export const ThirdImage = styled.img`
+  position: relative;
   width: 411px;
   height: 489px;
   border-radius: 10px;
+
+  @media(max-width: 768px) {
+    display: none;
+  }
 `
+
+
 
 export const DescriptionButtonContainer = styled.div`
   display: flex;
@@ -109,34 +123,81 @@ export const ScrollDownLink = styled(Link)<{ isActive: boolean }>`
   }
 `
 
+export const ArrowImg = styled.img`
+  width: 20px;
+  height: 15px;
+  margin-right: 10px;
+`
+
 export const SecondContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 623px;
-  gap: 200px;
+  height: 650px;
 `
 
 export const CardsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 75%;
   height: 100%;
-  width: 70%;
-  min-width: 30%;
 `
 
-export const TitleForDescription = styled.p`
+export const CardRow = styled.div`
+  display: grid;
+  grid-template-columns: 400px 2fr 3fr;
+  align-items: center;
+  width: 100%;
+  margin: 24px 0px;
+`
+
+export const CardHeader = styled.p`
   line-height: 35px;
   font-size: 20px;
   font-weight: 700;
   color: ${colors.primaryBlack};
 `
 
-export const CardContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0px;
+export const Line = styled.div`
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  min-height: 1px;
+  background-color: ${colors.secondaryBlack};
+`
+
+export const ThirdContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 50px 0px;
+  gap: 250px;
+`
+
+export const ForthImage = styled.img`
+  position: relative;
+  width: 1800px;
+  height: 788px;
+  border-radius: 10px;
+`
+
+export const OverlayBox = styled.div`
+  position: absolute;
+  top: 3080px;
+  z-index: 1000;
+  width: 47%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 80px;
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  border: 1px solid white;
+  color: white;
+`
+
+export const BluredQRCodeImg = styled.img`
+  width: 90px;
+  height: 90px;
+  margin-left: 70px;
 `

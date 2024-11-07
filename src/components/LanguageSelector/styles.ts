@@ -4,6 +4,10 @@ import { colors } from "styles/colors"
 export const SelectorContainer = styled.div`
   position: relative;
   display: inline-block;
+
+  @media(max-width: 768px) {
+    display: none;
+  }
 `
 
 export const LanguageButton = styled.button`

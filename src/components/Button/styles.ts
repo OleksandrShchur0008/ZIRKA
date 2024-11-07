@@ -13,14 +13,13 @@ export const ButtonComponent = styled.button`
   font-weight: 400;
   padding: 24px 50px;
   letter-spacing: 1px;
-
   cursor: pointer;
   &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background: ${colors.primaryBeige};
   }
   &:active {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(2px);
   }
 `

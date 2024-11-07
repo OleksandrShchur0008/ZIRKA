@@ -27,4 +27,8 @@ export const LoginLink = styled(Link)<{ isActive: boolean }>`
   &:hover {
     color: ${colors.primaryBeige};
   }
+
+  @media(max-width: 768px) {
+    display: none;
+  }
 `

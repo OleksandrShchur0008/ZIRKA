@@ -24,4 +24,8 @@ export const CallLink = styled(Link)`
   border-radius: 200px;
   border: 1px solid ${colors.primaryBeige};
   color: ${colors.primaryBeige};
+
+  @media(max-width: 768px) {
+    display: none;
+  }
 `

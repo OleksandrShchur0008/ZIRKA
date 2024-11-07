@@ -4,6 +4,7 @@ import { colors } from "styles/colors"
 export const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
-  margin: 50px;
+  width: 100%;
+  margin: 50px 60px;
+  gap: 70px;
 `

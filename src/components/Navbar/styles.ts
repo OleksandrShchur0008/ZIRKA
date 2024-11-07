@@ -6,6 +6,10 @@ export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 25px;
+
+  @media(max-width: 768px) {
+    display: none;
+  }
 `
 
 export const NavbarLink = styled(Link)<{ isActive: boolean }>`
