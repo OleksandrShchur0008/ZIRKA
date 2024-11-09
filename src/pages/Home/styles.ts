@@ -6,8 +6,17 @@ export const HomeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 50px 60px;
-  gap: 70px;
+`
+
+export const HomeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0px 60px;
+  gap: 50px;
+
+  @media (max-width: 768px) {
+    margin: 30px 12px;
+  }
 `
 
 export const FirstContainer = styled.div`
@@ -17,6 +26,12 @@ export const FirstContainer = styled.div`
   min-height: 1000px;
   position: relative;
   gap: 50px;
+
+  @media (max-width: 768px) {
+    min-height: max-content;
+    position: static;
+    gap: 0;
+  }
 `
 
 export const FirstPart = styled.div`
@@ -25,10 +40,20 @@ export const FirstPart = styled.div`
   height: fit-content;
   position: relative;
   width: 100%;
+
+  @media (max-width: 768px) {
+    position: static;
+    justify-content: center;
+  }
 `
 
 export const Row = styled.div`
   display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `
 
 export const Column = styled.div`
@@ -36,6 +61,10 @@ export const Column = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `
 
 export const SecondPart = styled.div`
@@ -44,6 +73,11 @@ export const SecondPart = styled.div`
   top: 160px;
   width: 100%;
   gap: 70px;
+
+  @media (max-width: 768px) {
+    position: static;
+    justify-content: center;
+  }
 `
 
 export const StyledTitle = styled.h2`
@@ -51,6 +85,12 @@ export const StyledTitle = styled.h2`
   font-size: 120px;
   font-weight: 400;
   color: ${colors.primaryBeige};
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+    height: max-content;
+    text-align: center;
+  }
 `
 
 export const FirstImage = styled.img`
@@ -59,8 +99,10 @@ export const FirstImage = styled.img`
   height: 664px;
   border-radius: 10px;
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
+    width: 205px;
+    height: 275px;
   }
 `
 
@@ -70,8 +112,10 @@ export const SecondImage = styled.img`
   height: 480px;
   border-radius: 10px;
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
+    width: 205px;
+    height: 275px;
   }
 `
 
@@ -81,30 +125,46 @@ export const ThirdImage = styled.img`
   height: 489px;
   border-radius: 10px;
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
+    width: 205px;
+    height: 275px;
   }
 `
-
-
 
 export const DescriptionButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `
 
 export const Description = styled.p`
-  line-height: 35px;
+  line-height: 31px;
   font-size: 20px;
   font-weight: 400;
   color: ${colors.primaryBlack};
+
+  @media (max-width: 768px) {
+    line-height: 21px;
+    font-size: 14px;
+  }
 `
 
 export const StyledRow = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export const ScrollDownLink = styled(Link)<{ isActive: boolean }>`
@@ -121,6 +181,10 @@ export const ScrollDownLink = styled(Link)<{ isActive: boolean }>`
     color: ${colors.primaryBeige};
     border-bottom: 2px solid ${colors.primaryBeige};
   }
+
+  @media (max-width: 768px) {
+    margin-right: 60px;
+  }
 `
 
 export const ArrowImg = styled.img`
@@ -134,6 +198,12 @@ export const SecondContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 650px;
+
+  @media (max-width: 768px) {
+    position: static;
+    flex-direction: column;
+    height: auto;
+  }
 `
 
 export const CardsContainer = styled.div`
@@ -141,6 +211,9 @@ export const CardsContainer = styled.div`
   flex-direction: column;
   width: 75%;
   height: 100%;
+
+  @media (max-width: 768px) {
+  }
 `
 
 export const CardRow = styled.div`
@@ -156,6 +229,11 @@ export const CardHeader = styled.p`
   font-size: 20px;
   font-weight: 700;
   color: ${colors.primaryBlack};
+
+  @media (max-width: 768px) {
+    line-height: 21px;
+    font-size: 14px;
+  }
 `
 
 export const Line = styled.div`
@@ -170,6 +248,10 @@ export const ThirdContainer = styled.div`
   width: 100%;
   margin: 50px 0px;
   gap: 250px;
+
+  @media (max-width: 768px) {
+    position: static;
+  }
 `
 
 export const ForthImage = styled.img`
@@ -177,11 +259,16 @@ export const ForthImage = styled.img`
   width: 1800px;
   height: 788px;
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    width: 339px;
+    height: 551px;
+  }
 `
 
 export const OverlayBox = styled.div`
   position: absolute;
-  top: 3080px;
+  top: 2940px;
   z-index: 1000;
   width: 47%;
   height: 50%;
@@ -191,7 +278,7 @@ export const OverlayBox = styled.div`
   justify-content: space-evenly;
   margin-right: 80px;
   border-radius: 10px;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(30px);
   border: 1px solid white;
   color: white;
 `

@@ -39,11 +39,6 @@ const globalStyles = css`
     min-height: 100vh;
     width: 100%;
   }
-
-  /* ::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-  } */
 `
 
 export default function GlobalStyles() {

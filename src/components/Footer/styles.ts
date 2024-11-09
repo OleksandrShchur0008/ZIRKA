@@ -7,6 +7,7 @@ export const FooterContainer = styled.div`
   justify-content: end;
   gap: 400px;
   width: 100%;
+  padding: 50px 60px;
 `
 
 export const FirstPart = styled.div`

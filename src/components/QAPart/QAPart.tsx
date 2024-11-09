@@ -20,17 +20,14 @@ export default function QAPart() {
   return (
     <QAPartWrapper>
       <TitleButtonContainer>
-        <Title>
-          Часті <br />
-          питання
-        </Title>
+        <Title>Часті питання</Title>
         <Row>
           <Button onClick={() => navigate("/starofmemory")} />
           <Arrow2Img src={arrow2} alt="" />
         </Row>
       </TitleButtonContainer>
       <QAPartContainer>
-        <QARow style={{margin: "0px"}}>
+        <QARow style={{ margin: "0px" }}>
           <QAPartTitle>Питання</QAPartTitle>
           <QAPartTitle>Відповідь</QAPartTitle>
         </QARow>

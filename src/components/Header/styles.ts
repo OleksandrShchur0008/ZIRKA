@@ -6,6 +6,8 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 50px 60px;
+  gap: 15px;
 `
 
 export const Title = styled.h1`
@@ -25,7 +27,26 @@ export const CallLink = styled(Link)`
   border: 1px solid ${colors.primaryBeige};
   color: ${colors.primaryBeige};
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
+  }
+`
+
+export const BarContainer = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    cursor: pointer;
+  }
+`
+
+export const BarImg = styled.img`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    width: 38px;
+    height: 38px;
   }
 `

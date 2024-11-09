@@ -24,12 +24,13 @@ import {
   CardRow,
   CardHeader,
   Line,
+  HomeContainer,
 } from "./styles"
 import {
   arrow,
   bluredqrcode,
   firstimg,
-  forthimg,
+  fourthimg,
   secondimg,
   thirdimg,
 } from "assets"
@@ -52,6 +53,7 @@ export default function Home() {
   return (
     <HomeWrapper>
       <Header />
+      <HomeContainer>
       <FirstContainer>
         <FirstPart>
           <Row>
@@ -65,7 +67,7 @@ export default function Home() {
         <SecondPart>
           <FirstImage src={firstimg} />
           <Column>
-            <StyledTitle style={{ marginLeft: "50px" }}>
+            <StyledTitle>
               ЗІРКА ПАМ'ЯТІ
             </StyledTitle>
             <StyledRow>
@@ -172,7 +174,7 @@ export default function Home() {
             </StyledTitle>
           </StyledTitle>
         </StyledRow>
-        <StyledRow>
+        <StyledRow style={{alignItems: "end"}}>
           <Title>Про проєкт:</Title>
           <Description>
             Ця теорія стверджує, що замість повного «відпускання» померлого,
@@ -196,7 +198,7 @@ export default function Home() {
           </Description>
         </StyledRow>
         <Row style={{ justifyContent: "flex-end" }}>
-          <ForthImage src={forthimg} />
+          <ForthImage src={fourthimg} />
           <OverlayBox>
             <Row>
               <StyledTitle style={{ fontSize: "84px", color: "white" }}>
@@ -215,6 +217,7 @@ export default function Home() {
       </ThirdContainer>
       <QAPart />
       <Footer />
+      </HomeContainer>
     </HomeWrapper>
   )
 }

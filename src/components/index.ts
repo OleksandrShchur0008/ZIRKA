@@ -5,3 +5,4 @@ export { default as LanguageSelector } from "components/LanguageSelector/Languag
 export { default as Button } from "components/Button/Button"
 export { default as QAPart } from "components/QAPart/QAPart"
 export { default as Footer } from "components/Footer/Footer"
+export { default as Input } from "components/Input/Input"
