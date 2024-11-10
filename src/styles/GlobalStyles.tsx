@@ -9,14 +9,15 @@ const globalStyles = css`
   html,
   body {
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
-    background-color: ${colors.primaryWhite};
+    font-family: Helvetica, Arial, sans-serif !important;
   }
 
   body::-webkit-scrollbar {
-    width: 0; /* Скрыть скроллбар */
-    background: transparent; /* Дополнительно скрываем фон скроллбара */
+    width: 0;
+    background: transparent;
   }
 
   h1,
@@ -35,13 +36,9 @@ const globalStyles = css`
   #root {
     display: flex;
     flex: 1;
-    height: 100%;
+    min-height: 100vh;
+    width: 100%;
   }
-
-  /* ::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-  } */
 `
 
 export default function GlobalStyles() {

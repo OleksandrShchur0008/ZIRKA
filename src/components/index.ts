@@ -1,0 +1,8 @@
+export { default as Header } from "components/Header/Header"
+export { default as Navbar } from "components/Navbar/Navbar"
+export { default as Details } from "components/Details/Details"
+export { default as LanguageSelector } from "components/LanguageSelector/LanguageSelector"
+export { default as Button } from "components/Button/Button"
+export { default as QAPart } from "components/QAPart/QAPart"
+export { default as Footer } from "components/Footer/Footer"
+export { default as Input } from "components/Input/Input"
