@@ -318,9 +318,9 @@ export default function StarOfMemory() {
           </CardsBox>
         </FourthContainer>
         <FifthContainer>
-          <div>
+          <div> 
             <StyledTitlev2>Реальні відгуки</StyledTitlev2>
-            <Row>
+            <StyledRow>
               <StyledTitlev2>клієнтів про</StyledTitlev2>
               <StyledTitlev2 style={{ color: colors.primaryBeige }}>
                 &nbsp;ZIRKA
@@ -333,7 +333,7 @@ export default function StarOfMemory() {
                   <Arrows src={arrowright} />
                 </ArrowButton>
               </ButtonContainer>
-            </Row>
+            </StyledRow>
           </div>
           <VideosContainer>
             <VideoImg src={video1} alt="" />
