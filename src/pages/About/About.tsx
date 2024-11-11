@@ -63,7 +63,8 @@ export default function About() {
           </ButtonContainer>
         </MainContent>
       </FirstContainer>
-      <QAPart />
+      <div style={{margin: "0px 60px"}}>
+      <QAPart /></div>
       <Footer />
     </AboutWrapper>
   )
