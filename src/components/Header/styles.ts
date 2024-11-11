@@ -8,6 +8,10 @@ export const HeaderContainer = styled.div`
   width: 100%;
   padding: 50px 60px;
   gap: 15px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `
 
 export const Title = styled.h1`
@@ -16,6 +20,10 @@ export const Title = styled.h1`
   font-size: 30px;
   font-weight: 400;
   color: ${colors.primaryGrey};
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
 
 export const CallLink = styled(Link)`
@@ -37,6 +45,7 @@ export const BarContainer = styled.div`
 
   @media (max-width: 768px) {
     display: flex;
+    align-items: center;
     cursor: pointer;
   }
 `

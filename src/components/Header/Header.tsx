@@ -6,7 +6,8 @@ import {
   HeaderContainer,
   Title,
 } from "./styles"
-import { bar } from "assets"
+import { barbeige } from "assets"
+import { Link } from "react-router-dom"
 
 export default function Header() {
   return (
@@ -16,7 +17,9 @@ export default function Header() {
       <Details />
       <CallLink to="/contact">ЗАТЕЛЕФОНУВАТИ</CallLink>
       <BarContainer>
-        <BarImg src={bar} />
+        <Link to={"/mobilenavigation"}>
+          <BarImg src={barbeige} />
+        </Link>
       </BarContainer>
     </HeaderContainer>
   )

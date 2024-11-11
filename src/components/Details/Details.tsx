@@ -1,5 +1,10 @@
 import { LanguageSelector } from "components"
-import { DetailsContainer, Info, LoginLink } from "./styles"
+import {
+  DetailsContainer,
+  Info,
+  LanguageSelectorContainer,
+  LoginLink,
+} from "./styles"
 
 export default function Details() {
   return (
@@ -9,7 +14,9 @@ export default function Details() {
         <br />
         instagram@ZIRKA
       </Info>
-      <LanguageSelector/>
+      <LanguageSelectorContainer>
+        <LanguageSelector />
+      </LanguageSelectorContainer>
       <LoginLink to="/login" isActive={location.pathname === "/login"}>
         Вхід у додаток
       </LoginLink>

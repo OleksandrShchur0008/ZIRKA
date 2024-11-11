@@ -25,6 +25,7 @@ import {
   CardHeader,
   Line,
   HomeContainer,
+  MainButtonContainer,
 } from "./styles"
 import {
   arrow,
@@ -92,7 +93,9 @@ export default function Home() {
                     <br />
                     (Continuing Bonds Theory)
                   </Description>
-                  <Button onClick={() => navigate("/starofmemory")} />
+                  <MainButtonContainer>
+                    <Button onClick={() => navigate("/starofmemory")} />
+                  </MainButtonContainer>
                 </DescriptionButtonContainer>
                 <SecondImage src={secondimg} />
                 <ScrollDownLink
@@ -124,7 +127,9 @@ export default function Home() {
               <br /> надгробків та урн.
               <br /> Формуйте свою пам'ять.
             </Description>
-            <Button onClick={() => navigate("/starofmemory")} />
+            <MainButtonContainer>
+              <Button onClick={() => navigate("/starofmemory")} />
+            </MainButtonContainer>
           </DescriptionButtonContainer>
           <CardsContainer>
             <CardRow style={{ marginTop: "0px" }}>

@@ -15,7 +15,7 @@ export const HomeContainer = styled.div`
   gap: 50px;
 
   @media (max-width: 768px) {
-    margin: 30px 12px;
+    margin: 0px 20px;
   }
 `
 
@@ -287,4 +287,10 @@ export const BluredQRCodeImg = styled.img`
   width: 90px;
   height: 90px;
   margin-left: 70px;
+`
+
+export const MainButtonContainer = styled.div`
+  display: flex;
+  height: 72px;
+  width: 200px;
 `

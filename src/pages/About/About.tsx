@@ -2,7 +2,7 @@ import { Footer, Header, QAPart } from "components"
 import {
   AboutWrapper,
   ContentWrapper,
-  ButtonContainer,
+  ButtonsContainer,
   Description,
   FirstContainer,
   MainContent,
@@ -13,6 +13,7 @@ import {
   FirstContentToChange,
   SecondContentToChange,
   Arrows,
+  QAPartContainer,
 } from "./styles"
 import { arrowleft, arrowright, phone } from "assets"
 import { useState } from "react"
@@ -53,19 +54,19 @@ export default function About() {
               <Description>{secondContent.description}</Description>
             </SecondContentToChange>
           </ContentWrapper>
-          <ButtonContainer>
+          <ButtonsContainer>
             <ArrowButton onClick={() => toggleContent("left")}>
               <Arrows src={arrowleft} />
             </ArrowButton>
             <ArrowButton onClick={() => toggleContent("right")}>
               <Arrows src={arrowright} />
             </ArrowButton>
-          </ButtonContainer>
+          </ButtonsContainer>
         </MainContent>
       </FirstContainer>
-      <div style={{ margin: "0px 60px" }}>
+      <QAPartContainer>
         <QAPart />
-      </div>
+      </QAPartContainer>
       <Footer />
     </AboutWrapper>
   )

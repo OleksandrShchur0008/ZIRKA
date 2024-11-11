@@ -1,5 +1,6 @@
 import { Button, Footer, Header, Input } from "components"
 import {
+  ButtonContainer,
   ContactContainer,
   ContactContainerBackground,
   ContactWrapper,
@@ -38,12 +39,16 @@ export default function Contact() {
             <Input type="email" placeholder="Email" />
             <Input type="tel" placeholder="Номер телефону" />
             <Input placeholder="Коментар" />
-            <Button
-              name="Відправити"
-              type="submit"
-              onClick={() => {}}
-              style={{ borderRadius: "26px", padding: "26px 130px", marginTop: "20px" }}
-            />
+            <ButtonContainer>
+              <Button
+                name="Відправити"
+                type="submit"
+                onClick={() => {}}
+                style={{
+                  borderRadius: "26px",
+                }}
+              />
+            </ButtonContainer>
           </QuestionFormContainer>
         </ContactContainer>
       </ContactContainerBackground>

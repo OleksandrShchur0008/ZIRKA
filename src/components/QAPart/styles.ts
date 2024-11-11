@@ -11,6 +11,8 @@ export const QAPartWrapper = styled.div`
     position: static;
     flex-direction: column;
     height: auto;
+    gap: 0px;
+    margin: 100px 0px 0px 0px;
   }
 `
 
@@ -24,6 +26,8 @@ export const TitleButtonContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: row;
     height: auto;
+    width: 100%;
+    justify-content: baseline;
   }
 `
 
@@ -64,7 +68,14 @@ export const QARow = styled.div`
   grid-template-columns: 3fr 2.5fr;
   gap: 20px;
   width: 100%;
-  padding: 40px 0;
+  padding: 40px 0px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0px;
+  }
 `
 
 export const QAPartTitle = styled.h6`

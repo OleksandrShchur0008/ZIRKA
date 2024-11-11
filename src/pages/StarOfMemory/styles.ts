@@ -14,7 +14,7 @@ export const StarOfMemoryContainer = styled.div`
   gap: 20px;
 
   @media (max-width: 768px) {
-    margin: 30px 12px;
+    margin: 0px 20px;
   }
 `
 
@@ -45,6 +45,20 @@ export const ButtonImgContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+`
+
+export const ButtonOnImgContainer = styled.div`
+  display: flex;
+  height: 95px;
+  width: 335px;
+  position: absolute;
+  z-index: 1;
+  top: -50px;
+
+  @media (max-width: 768px) {
+    height: 72px;
+    width: 200px;
+  }
 `
 
 export const QRCodeImgContainer = styled.div`
@@ -118,6 +132,16 @@ export const OrderDiscountPrice = styled.h6`
   margin-bottom: 60px;
 `
 
+export const BuyButtonContainer = styled.div`
+  display: flex;
+  height: 85px;
+  width: 450px;
+
+  @media (max-width: 768px) {
+    width: 200px;
+  }
+`
+
 export const OrderDescription = styled.p`
   font-size: 20px;
   font-weight: 400;
@@ -137,10 +161,7 @@ export const FourthContainer = styled.div`
 export const CardsBox = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(
-    2,
-    auto
-  ); 
+  grid-template-rows: repeat(2, auto);
   width: 100%;
 `
 

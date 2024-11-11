@@ -24,9 +24,11 @@ export const FirstContainer = styled.div`
 export const PhoneImg = styled.img`
   width: 730px;
   height: 1006px;
+
   @media (max-width: 768px) {
     width: 182px;
     height: 252px;
+    translate: -25px;
   }
 `
 
@@ -54,6 +56,10 @@ export const ContentWrapper = styled.div`
   position: relative;
   width: 100%;
   gap: 50px;
+
+  @media (max-width: 768px) {
+    padding-top: 20px;
+  }
 `
 
 export const FirstContentToChange = styled.div<{ isAlternate: boolean }>`
@@ -68,9 +74,12 @@ export const FirstContentToChange = styled.div<{ isAlternate: boolean }>`
     opacity 0.8s ease,
     transform 0.8s ease;
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
     line-height: 16px;
     font-size: 14px;
+    display: ${({ isAlternate }) => (isAlternate ? "none" : "translateX(0)")};
+    transform: ${({ isAlternate }) =>
+      isAlternate ? "translateX(0)" : "translateX(-20%)"};
   }
 `
 
@@ -86,9 +95,12 @@ export const SecondContentToChange = styled.div<{ isAlternate: boolean }>`
     opacity 0.8s ease,
     transform 0.8s ease;
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
     line-height: 16px;
     font-size: 14px;
+    display: ${({ isAlternate }) => (isAlternate ? "translateX(0)" : "none")};
+    transform: ${({ isAlternate }) =>
+      isAlternate ? "translateX(-20%)" : "translateX(0%)"};
   }
 `
 
@@ -115,7 +127,7 @@ export const Description = styled.h5`
   }
 `
 
-export const ButtonContainer = styled.div`
+export const ButtonsContainer = styled.div`
   display: flex;
   gap: 20px;
   justify-content: flex-end;
@@ -136,8 +148,21 @@ export const ArrowButton = styled.button`
   &:hover {
     background-color: ${colors.primaryGrey};
   }
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
 `
 export const Arrows = styled.img`
   height: 28px;
   width: 30px;
+`
+
+export const QAPartContainer = styled.div`
+  margin: 0px 60px;
+
+  @media (max-width: 768px) {
+    margin: 0px 20px;
+  }
 `

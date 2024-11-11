@@ -14,6 +14,10 @@ export const ContactContainerBackground = styled.div`
   width: 100%;
   height: 800px;
   background-color: ${colors.primaryBeige};
+
+  @media (max-width: 768px) {
+    height: 900px;
+  }
 `
 
 export const ContactContainer = styled.div`
@@ -33,6 +37,7 @@ export const ContactContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
   }
 `
 
@@ -48,7 +53,7 @@ export const DescriptionContainer = styled.div`
   @media (max-width: 768px) {
     gap: 20px;
     margin: 0px;
-    margin-left: 50px;
+    padding-left: 30px;
   }
 `
 
@@ -93,7 +98,7 @@ export const DescriptionSecondPart = styled.h5`
   font-size: 24px;
   font-weight: 400;
   color: ${colors.primaryBlack};
-  margin-bottom: 70px;
+  margin: 70px 0px;
 
   @media (max-width: 768px) {
     line-height: 16px;
@@ -113,6 +118,17 @@ export const QuestionFormContainer = styled.div`
 
   @media (max-width: 768px) {
     margin: 0px;
-    margin-left: 40px;
+    align-items: center;
+  }
+`
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  margin: 20px 0px;
+  height: 85px;
+  width: 400px;
+
+  @media (max-width: 768px) {
+    width: 260px;
   }
 `

@@ -29,6 +29,8 @@ import {
   ThirdContainer,
   VideoImg,
   VideosContainer,
+  BuyButtonContainer,
+  ButtonOnImgContainer,
 } from "./styles"
 import {
   CardHeader,
@@ -60,7 +62,7 @@ import {
 import { colors } from "styles/colors"
 import { useNavigate } from "react-router-dom"
 import { Title } from "components/Header/styles"
-import { ArrowButton, Arrows, ButtonContainer } from "pages/About/styles"
+import { ArrowButton, Arrows, ButtonsContainer } from "pages/About/styles"
 import { useState } from "react"
 
 export default function StarOfMemory() {
@@ -91,15 +93,9 @@ export default function StarOfMemory() {
             <StyledTitle>ВІЧНІСТЬ</StyledTitle>
           </HeaderTitle>
           <ButtonImgContainer>
-            <Button
-              onClick={() => navigate("/starofmemory")}
-              style={{
-                position: "absolute",
-                zIndex: "1",
-                top: "-40px",
-                padding: "30px 110px",
-              }}
-            />
+            <ButtonOnImgContainer>
+              <Button onClick={() => navigate("/starofmemory")} />
+            </ButtonOnImgContainer>
             <ForthImage src={fourthimg} />
           </ButtonImgContainer>
           <StyledTitle
@@ -217,7 +213,9 @@ export default function StarOfMemory() {
             <OrderWithoutDiscountPrice>₴2,050.00 UAH</OrderWithoutDiscountPrice>
             <StyledRow>
               <OrderDiscountPrice>₴1,290.00 UAH</OrderDiscountPrice>
-              <Button name="ПРИДБАТИ" style={{ padding: "0px 170px" }}></Button>
+              <BuyButtonContainer>
+                <Button name="ПРИДБАТИ" />
+              </BuyButtonContainer>
             </StyledRow>
             <StyledRow>
               <OrderDescription>
@@ -318,21 +316,21 @@ export default function StarOfMemory() {
           </CardsBox>
         </FourthContainer>
         <FifthContainer>
-          <div> 
+          <div>
             <StyledTitlev2>Реальні відгуки</StyledTitlev2>
             <StyledRow>
               <StyledTitlev2>клієнтів про</StyledTitlev2>
               <StyledTitlev2 style={{ color: colors.primaryBeige }}>
                 &nbsp;ZIRKA
               </StyledTitlev2>
-              <ButtonContainer>
+              <ButtonsContainer>
                 <ArrowButton onClick={() => toggleContent("left")}>
                   <Arrows src={arrowleft} />
                 </ArrowButton>
                 <ArrowButton onClick={() => toggleContent("right")}>
                   <Arrows src={arrowright} />
                 </ArrowButton>
-              </ButtonContainer>
+              </ButtonsContainer>
             </StyledRow>
           </div>
           <VideosContainer>
