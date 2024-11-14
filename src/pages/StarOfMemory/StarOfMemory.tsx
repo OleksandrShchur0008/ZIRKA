@@ -75,11 +75,36 @@ import { colors } from "styles/colors"
 import { useNavigate } from "react-router-dom"
 import { Title } from "components/Header/styles"
 import { ArrowButton, Arrows, ButtonsContainer } from "pages/About/styles"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useInView } from "react-intersection-observer"
+import gsap from "gsap"
 
 export default function StarOfMemory() {
   const navigate = useNavigate()
   const [isAlternate, setIsAlternate] = useState(false)
+
+  const { ref: firstRef, inView: firstInView } = useInView({ triggerOnce: true, threshold: 0.01 });
+  const { ref: secondRef, inView: secondInView } = useInView({ triggerOnce: true, threshold: 0.01 });
+
+  useEffect(() => {
+    if (firstInView) {
+      gsap.fromTo(
+        "#up-to-down-anim",
+        { translateY: "-140px", opacity: 0.2 },
+        { translateY: "0", opacity: 1, duration: 2 }
+      );
+    }
+  }, [firstInView]);
+
+  useEffect(() => {
+    if (secondInView) {
+      gsap.fromTo(
+        "#left-to-right-anim",
+        { translateX: "-340px", opacity: 0.5 },
+        { translateX: "0px",  opacity: 1, duration: 3 },
+      );
+    }
+  }, [secondInView]);
 
   const toggleContent = (direction: string) => {
     setIsAlternate(direction === "right")
@@ -88,8 +113,8 @@ export default function StarOfMemory() {
     <StarOfMemoryWrapper>
       <Header />
       <StarOfMemoryContainer>
-        <StarOfMemoryFirstContainer>
-          <HeaderTitle>
+        <StarOfMemoryFirstContainer ref={firstRef}>
+          <HeaderTitle id="up-to-down-anim">
             <RowInHeader>
               <HeaderStyledTitle>УСІ</HeaderStyledTitle>
               <HeaderStyledTitle style={{ color: colors.primaryBlack }}>
@@ -113,11 +138,11 @@ export default function StarOfMemory() {
           </ButtonImgContainer>
           <SecondContainerTitle>ВСЕ ЯК НА ДОЛОНІ</SecondContainerTitle>
         </StarOfMemoryFirstContainer>
-        <SecondContainer style={{ height: "1100px" }}>
+        <SecondContainer ref={secondRef} style={{ height: "1100px" }} >
           <QRCodeImgContainer>
             <QRCodeImg src={qrcodeimg} alt="" />
           </QRCodeImgContainer>
-          <CardsContainer>
+          <CardsContainer id="left-to-right-anim">
             <CardRow>
               <StyledTitle>01</StyledTitle>
               <MobileDescriptionColumn>

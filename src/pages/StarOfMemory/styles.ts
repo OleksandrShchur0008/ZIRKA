@@ -387,7 +387,7 @@ export const VideosContainer = styled.div`
     gap: 5px;
     overflow-x: auto;
     white-space: nowrap;
-    width: 100vw;
+    width: 90vw;
   }
 `
 export const VideoImg = styled.img`

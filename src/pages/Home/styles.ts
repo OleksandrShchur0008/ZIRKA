@@ -97,9 +97,9 @@ export const MobileImagesContainer = styled.div`
   @media (max-width: 1500px) {
     display: flex;
     gap: 5px;
+    overflow-x: hidden;
     overflow-x: auto;
     white-space: nowrap;
-    padding-top: 20px;
     width: 100vw;
   }
 `
@@ -170,6 +170,7 @@ export const MobileSharedStyleImage = styled.img`
     width: 205px;
     height: 275px;
     flex-shrink: 0;
+    overflow-x: hidden;
   }
 `
 
@@ -192,6 +193,20 @@ export const Description = styled.p`
   @media (max-width: 768px) {
     line-height: 21px;
     font-size: 14px;
+  }
+`
+
+export const StyledDescription = styled.p`
+  line-height: 31px;
+  font-size: 20px;
+  font-weight: 400;
+  color: ${colors.primaryBlack};
+
+  @media (max-width: 768px) {
+    line-height: 21px;
+    font-size: 14px;
+    text-align: center;
+    padding: 25px 0px;
   }
 `
 
@@ -335,6 +350,7 @@ export const ThirdContainer = styled.div`
 
   @media (max-width: 768px) {
     position: static;
+    margin: 0px;
     gap: 0px;
   }
 `
@@ -412,7 +428,7 @@ export const OverlayBox = styled.div`
     width: 500px;
     height: 390px;
     margin: 0px;
-    margin-bottom: 20px;
+    
     gap: 10px;
   }
 

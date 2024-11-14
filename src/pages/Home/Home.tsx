@@ -38,12 +38,14 @@ import {
   SecondDescriptionButtonContainer,
   MobileImagesContainer,
   MobileSharedStyleImage,
+  StyledDescription,
 } from "./styles"
 import {
   arrow,
   bluredqrcode,
   firstimg,
   fourthimg,
+  mobilefirstimg,
   mobilefourthimg,
   secondimg,
   thirdimg,
@@ -58,18 +60,61 @@ import { OrderTitle } from "pages/StarOfMemory/styles"
 
 export default function Home() {
   const navigate = useNavigate()
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  })
-  // useEffect(() => {
-  //   const anim = gsap.fromTo(
-  //     "#spogady-text",
-  //     { translateX: "-140px", opacity: 0.2 },
-  //     { translateX: "0", opacity: 1, duration: 2 },
-  //   )
-  //   return () => anim.kill()
-  // }, [inView])
+
+  const { ref: firstRef, inView: firstInView } = useInView({ triggerOnce: true, threshold: 0.01 });
+  const { ref: secondRef, inView: secondInView } = useInView({ triggerOnce: true, threshold: 0.01 });
+  const { ref: thirdRef, inView: thirdInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref: fourthRef, inView: fourthInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  useEffect(() => {
+    if (firstInView) {
+      gsap.fromTo(
+        "#left-to-right-anim",
+        { translateX: "-140px", opacity: 0.2 },
+        { translateX: "0", opacity: 1, duration: 2 }
+      );
+    }
+  }, [firstInView]);
+
+  useEffect(() => {
+    if (firstInView) {
+      gsap.fromTo(
+        "#right-to-left-anim",
+        { translateX: "140px", opacity: 0.2 },
+        { translateX: "0", opacity: 1, duration: 2 }
+      );
+    }
+  }, [firstInView]);
+
+  useEffect(() => {
+    if (secondInView) {
+      gsap.fromTo(
+        "#down-to-up-anim",
+        { translateY: "140px", opacity: 0 },
+        { translateY: "0px", opacity: 1, duration: 3 }
+      );
+    }
+  }, [secondInView]);
+
+  useEffect(() => {
+    if (thirdInView) {
+      gsap.fromTo(
+        "#right-to-left-anim2",
+        { translateX: "140px", opacity: 0.5 },
+        { translateX: "0px",  opacity: 1, duration: 3 },
+      );
+    }
+  }, [thirdInView]);
+
+  useEffect(() => {
+    if (fourthInView) {
+      gsap.fromTo(
+        "#left-to-right-anim",
+        { translateX: "-240px", opacity: 0.5 },
+        { translateX: "0px",  opacity: 1, duration: 3 },
+      );
+    }
+  }, [fourthInView]);
 
   const handleScrollDown = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
@@ -84,9 +129,9 @@ export default function Home() {
     <HomeWrapper>
       <Header />
       <HomeContainer>
-        <HomeFirstContainer ref={ref}>
+        <HomeFirstContainer ref={firstRef}>
           <HomeFirstPart>
-            <HomeRow id="spogady-text">
+            <HomeRow id="left-to-right-anim">
               <StyledTitle>СПОГАДИ</StyledTitle>
               <StyledTitle style={{ color: colors.primaryBlack }}>
                 &nbsp;НА ВІКИ
@@ -97,22 +142,22 @@ export default function Home() {
           <HomeSecondPart>
             <FirstImage src={firstimg} />
             <HomeColumn>
-              <StyledTitle>ЗІРКА ПАМ'ЯТІ</StyledTitle>
+              <StyledTitle id="right-to-left-anim">ЗІРКА ПАМ'ЯТІ</StyledTitle>
               <HomeStyledRow>
                 <FirstDescriptionButtonContainer>
-                  <Description>
+                  <StyledDescription>
                     Проєкт натхненний теорією
                     <br />
                     подовженого зв'язку
                     <br />
                     (Continuing Bonds Theory)
-                  </Description>
+                  </StyledDescription>
                   <MainButtonContainer>
                     <Button onClick={() => navigate("/starofmemory")} />
                   </MainButtonContainer>
                   <MobileImagesContainer>
                     <MobileSharedStyleImage src={secondimg} />
-                    <MobileSharedStyleImage src={firstimg} />
+                    <MobileSharedStyleImage src={mobilefirstimg} />
                     <MobileSharedStyleImage src={thirdimg} />
                   </MobileImagesContainer>
                   <MobileMainButtonContainer>
@@ -132,8 +177,8 @@ export default function Home() {
             </HomeColumn>
           </HomeSecondPart>
         </HomeFirstContainer>
-        <SecondContainer>
-          <SecondDescriptionButtonContainer>
+        <SecondContainer ref={secondRef}>
+          <SecondDescriptionButtonContainer id="down-to-up-anim">
             <SecondContainerTitle>
               Індивідуальна сторінка пам'яті:
             </SecondContainerTitle>
@@ -148,7 +193,7 @@ export default function Home() {
               <Button onClick={() => navigate("/starofmemory")} />
             </MainButtonContainer>
           </SecondDescriptionButtonContainer>
-          <CardsContainer>
+          <CardsContainer id="down-to-up-anim">
             <CardRow style={{ marginTop: "0px" }}>
               <StyledTitle>01</StyledTitle>
               <MobileDescriptionColumn>
@@ -205,10 +250,10 @@ export default function Home() {
             <Button onClick={() => navigate("/starofmemory")} />
           </MobileMainButtonContainer>
         </SecondContainer>
-        <ThirdContainer>
+        <ThirdContainer ref={thirdRef}>
           <DescriptionContainer>
             <Title>ZIRKA</Title>
-            <OrderTitle>
+            <OrderTitle id="right-to-left-anim2">
               ПРОЄКТ НАТХНЕННИЙ ТЕОРІЄЮ
               <br /> ПРОДОВЖЕНОГО ЗВ'ЯЗКУ  
               <OrderTitle style={{ color: colors.primaryBlack }}>
@@ -218,7 +263,7 @@ export default function Home() {
           </DescriptionContainer>
           <DescriptionContainer>
             <Title>Про проєкт:</Title>
-            <Description>
+            <Description id="right-to-left-anim2">
               Ця теорія стверджує, що замість повного «відпускання» померлого,
               люди
               <br /> можуть продовжувати зберігати з ним емоційний зв'язок. Цей
@@ -230,7 +275,7 @@ export default function Home() {
               але при
               <br /> цьому зберігати його значущість у житті.
             </Description>
-            <Description>
+            <Description id="right-to-left-anim2">
               Основна ідея полягає в тому, що людина не
               <br /> обов'язково повинна «забувати» або «рухатися
               <br /> далі» в традиційному сенсі. Замість цього, вона
@@ -240,10 +285,10 @@ export default function Home() {
             </Description>
           </DescriptionContainer>
         </ThirdContainer>
-        <FourthContainer>
+        <FourthContainer ref={fourthRef}>
           <ForthImage src={fourthimg} />
           <MobileForthImage src={mobilefourthimg} />
-          <OverlayBox>
+          <OverlayBox id="left-to-right-anim">
             <HomeRow>
               <OverlayTitle>
                 СКАНУВАННЯ

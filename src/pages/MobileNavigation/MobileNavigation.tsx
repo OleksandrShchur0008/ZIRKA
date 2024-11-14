@@ -18,16 +18,41 @@ import {
 import { useNavigate } from "react-router-dom"
 import { barwhite, exit, qrcodebackground } from "assets"
 import { LanguageSelector } from "components"
+import { useInView } from "react-intersection-observer"
+import { useEffect } from "react"
+import gsap from "gsap"
 
 export default function MobileNavigation() {
   const navigate = useNavigate()
+
+  const { ref: firstRef, inView: firstInView } = useInView({ triggerOnce: true, threshold: 0.01 });
+
+  useEffect(() => {
+    if (firstInView) {
+      gsap.fromTo(
+        "#right-to-left-anim",
+        { translateX: "140px", opacity: 0.5 },
+        { translateX: "0", opacity: 1, duration: 1 }
+      );
+    }
+  }, [firstInView]);
+
+  useEffect(() => {
+    if (firstInView) {
+      gsap.fromTo(
+        "#left-to-right-anim",
+        { translateX: "-140px", opacity: 0.1 },
+        { translateX: "0", opacity: 1, duration: 1 }
+      );
+    }
+  }, [firstInView]);
 
   const handleClick = () => {
     navigate(-1)
   }
   return (
     <NavigationWrapper>
-      <NavigationContainer>
+      <NavigationContainer ref={firstRef}>
         <NavigationHeader>
           <Title>ZIRKA</Title>
           <CallLink to={"/contact"}>Зателефонувати</CallLink>
@@ -38,17 +63,17 @@ export default function MobileNavigation() {
 
         <NavigationMainContent>
           <NavigationLinksContainer>
-            <NavigationLink to={"/home"}>Головна</NavigationLink>
-            <NavigationLink to={"/starofmemory"}>Зірка пам'яті</NavigationLink>
+            <NavigationLink to={"/home"} id="right-to-left-anim">Головна</NavigationLink>
+            <NavigationLink to={"/starofmemory"} id="right-to-left-anim">Зірка пам'яті</NavigationLink>
           </NavigationLinksContainer>
-          <NavigationLink to={"/about"} style={{ alignItems: "flex-start" }}>
+          <NavigationLink to={"/about"} id="left-to-right-anim" style={{ alignItems: "flex-start" }}>
             Про нас
           </NavigationLink>
           <NavigationLinksContainer>
-            <NavigationLink to={"/contact"}>Контакти</NavigationLink>
+            <NavigationLink to={"/contact"} id="right-to-left-anim">Контакти</NavigationLink>
           </NavigationLinksContainer>
           {/* <NavigationLink to={"/wholesaleoffers"}>Оптові пропозиції</NavigationLink> */}
-          <Info>
+          <Info id="left-to-right-anim">
             +380 66 122 45 17
             <br />
             instagram@ZIRKA
