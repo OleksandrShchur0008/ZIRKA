@@ -1,14 +1,15 @@
 import { Button, Footer, Header, Input } from "components"
 import {
+  ButtonContainer,
   ContactContainer,
   ContactContainerBackground,
   ContactWrapper,
-  Description,
+  ContactDescription,
   DescriptionContainer,
-  DescriptionSecondPart,
+  ContactDescriptionSecondPart,
   PreTitle,
   QuestionFormContainer,
-  Title,
+  ContactTitle,
 } from "./styles"
 
 export default function Contact() {
@@ -19,31 +20,35 @@ export default function Contact() {
         <ContactContainer>
           <DescriptionContainer>
             <PreTitle>ЗАЛИШАЙ ЗАЯВКУ</PreTitle>
-            <Title>
+            <ContactTitle>
               У вас є <br /> запитання?
-            </Title>
-            <Description>
+            </ContactTitle>
+            <ContactDescription>
               Ми тут, щоб допомогти! Просто
               <br /> заповніть контактну форму
               <br /> нижче, і ми зв'яжемося з вами
               <br /> якомога швидше.
-            </Description>
-            <DescriptionSecondPart>
+            </ContactDescription>
+            <ContactDescriptionSecondPart>
               Або зателефонуйте за номером:
               <br /> +380965175595
-            </DescriptionSecondPart>
+            </ContactDescriptionSecondPart>
           </DescriptionContainer>
           <QuestionFormContainer>
             <Input placeholder="Ім'я" />
             <Input type="email" placeholder="Email" />
             <Input type="tel" placeholder="Номер телефону" />
             <Input placeholder="Коментар" />
-            <Button
-              name="Відправити"
-              type="submit"
-              onClick={() => {}}
-              style={{ borderRadius: "26px", padding: "26px 130px", marginTop: "20px" }}
-            />
+            <ButtonContainer>
+              <Button
+                name="Відправити"
+                type="submit"
+                onClick={() => {}}
+                style={{
+                  borderRadius: "26px",
+                }}
+              />
+            </ButtonContainer>
           </QuestionFormContainer>
         </ContactContainer>
       </ContactContainerBackground>

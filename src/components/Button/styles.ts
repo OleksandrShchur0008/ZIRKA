@@ -3,8 +3,8 @@ import { colors } from "styles/colors"
 
 export const ButtonComponent = styled.button`
   width: fit-content;
-  min-height: auto;
-  max-height: 90px;
+  height: auto;
+  width: 100%;
   outline: none;
   border: none;
   border-radius: 200px;

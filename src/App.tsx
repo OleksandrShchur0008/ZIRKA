@@ -1,4 +1,4 @@
-import { Home, StarOfMemory, About, Contact } from "pages/index"
+import { Home, StarOfMemory, About, Contact, MobileNavigation } from "pages/index"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 
 export default function App() {
@@ -10,6 +10,7 @@ export default function App() {
         <Route path="/starofmemory" element={<StarOfMemory />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/mobilenavigation" element={<MobileNavigation />} />
       </Routes>
     </BrowserRouter>
   )

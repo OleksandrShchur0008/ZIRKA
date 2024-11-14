@@ -2,18 +2,16 @@ import { Button, Footer, Header, QAPart } from "components"
 import {
   FirstImage,
   HomeWrapper,
-  FirstContainer,
+  HomeFirstContainer,
   SecondImage,
   ThirdImage,
   StyledTitle,
-  DescriptionButtonContainer,
+  FirstDescriptionButtonContainer,
   Description,
-  FirstPart,
-  SecondPart,
-  Row,
-  Column,
+  HomeFirstPart,
+  HomeRow,
+  HomeColumn,
   ScrollDownLink,
-  StyledRow,
   SecondContainer,
   CardsContainer,
   ThirdContainer,
@@ -25,12 +23,30 @@ import {
   CardHeader,
   Line,
   HomeContainer,
+  MainButtonContainer,
+  MobileDescriptionColumn,
+  MobileForthImage,
+  FourthContainer,
+  OverlayTitle,
+  MobileBluredQRCodeImg,
+  OverlayDescription,
+  DescriptionContainer,
+  MobileMainButtonContainer,
+  HomeSecondPart,
+  HomeStyledRow,
+  SecondContainerTitle,
+  SecondDescriptionButtonContainer,
+  MobileImagesContainer,
+  MobileSharedStyleImage,
+  StyledDescription,
 } from "./styles"
 import {
   arrow,
   bluredqrcode,
   firstimg,
   fourthimg,
+  mobilefirstimg,
+  mobilefourthimg,
   secondimg,
   thirdimg,
 } from "assets"
@@ -40,27 +56,71 @@ import { Title } from "components/Header/styles"
 import { useInView } from "react-intersection-observer"
 import { useEffect } from "react"
 import gsap from "gsap"
+import { OrderTitle } from "pages/StarOfMemory/styles"
 
 export default function Home() {
   const navigate = useNavigate()
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  })
-  // useEffect(() => {
-  //   const anim = gsap.fromTo(
-  //     "#spogady-text",
-  //     { translateX: "-140px", opacity: 0.2 },
-  //     { translateX: "0", opacity: 1, duration: 2 },
-  //   )
-  //   return () => anim.kill()
-  // }, [inView])
+
+  const { ref: firstRef, inView: firstInView } = useInView({ triggerOnce: true, threshold: 0.01 });
+  const { ref: secondRef, inView: secondInView } = useInView({ triggerOnce: true, threshold: 0.01 });
+  const { ref: thirdRef, inView: thirdInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref: fourthRef, inView: fourthInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  useEffect(() => {
+    if (firstInView) {
+      gsap.fromTo(
+        "#left-to-right-anim",
+        { translateX: "-140px", opacity: 0.2 },
+        { translateX: "0", opacity: 1, duration: 2 }
+      );
+    }
+  }, [firstInView]);
+
+  useEffect(() => {
+    if (firstInView) {
+      gsap.fromTo(
+        "#right-to-left-anim",
+        { translateX: "140px", opacity: 0.2 },
+        { translateX: "0", opacity: 1, duration: 2 }
+      );
+    }
+  }, [firstInView]);
+
+  useEffect(() => {
+    if (secondInView) {
+      gsap.fromTo(
+        "#down-to-up-anim",
+        { translateY: "140px", opacity: 0 },
+        { translateY: "0px", opacity: 1, duration: 3 }
+      );
+    }
+  }, [secondInView]);
+
+  useEffect(() => {
+    if (thirdInView) {
+      gsap.fromTo(
+        "#right-to-left-anim2",
+        { translateX: "140px", opacity: 0.5 },
+        { translateX: "0px",  opacity: 1, duration: 3 },
+      );
+    }
+  }, [thirdInView]);
+
+  useEffect(() => {
+    if (fourthInView) {
+      gsap.fromTo(
+        "#left-to-right-anim",
+        { translateX: "-240px", opacity: 0.5 },
+        { translateX: "0px",  opacity: 1, duration: 3 },
+      );
+    }
+  }, [fourthInView]);
 
   const handleScrollDown = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
 
     window.scrollBy({
-      top: 1000,
+      top: 888,
       behavior: "smooth",
     })
   }
@@ -69,31 +129,41 @@ export default function Home() {
     <HomeWrapper>
       <Header />
       <HomeContainer>
-        <FirstContainer ref={ref}>
-          <FirstPart>
-            <Row id="spogady-text">
+        <HomeFirstContainer ref={firstRef}>
+          <HomeFirstPart>
+            <HomeRow id="left-to-right-anim">
               <StyledTitle>СПОГАДИ</StyledTitle>
               <StyledTitle style={{ color: colors.primaryBlack }}>
                 &nbsp;НА ВІКИ
               </StyledTitle>
-            </Row>
+            </HomeRow>
             <ThirdImage src={thirdimg} />
-          </FirstPart>
-          <SecondPart>
+          </HomeFirstPart>
+          <HomeSecondPart>
             <FirstImage src={firstimg} />
-            <Column>
-              <StyledTitle>ЗІРКА ПАМ'ЯТІ</StyledTitle>
-              <StyledRow>
-                <DescriptionButtonContainer>
-                  <Description>
+            <HomeColumn>
+              <StyledTitle id="right-to-left-anim">ЗІРКА ПАМ'ЯТІ</StyledTitle>
+              <HomeStyledRow>
+                <FirstDescriptionButtonContainer>
+                  <StyledDescription>
                     Проєкт натхненний теорією
                     <br />
                     подовженого зв'язку
                     <br />
                     (Continuing Bonds Theory)
-                  </Description>
-                  <Button onClick={() => navigate("/starofmemory")} />
-                </DescriptionButtonContainer>
+                  </StyledDescription>
+                  <MainButtonContainer>
+                    <Button onClick={() => navigate("/starofmemory")} />
+                  </MainButtonContainer>
+                  <MobileImagesContainer>
+                    <MobileSharedStyleImage src={secondimg} />
+                    <MobileSharedStyleImage src={mobilefirstimg} />
+                    <MobileSharedStyleImage src={thirdimg} />
+                  </MobileImagesContainer>
+                  <MobileMainButtonContainer>
+                    <Button onClick={() => navigate("/starofmemory")} />
+                  </MobileMainButtonContainer>
+                </FirstDescriptionButtonContainer>
                 <SecondImage src={secondimg} />
                 <ScrollDownLink
                   to={""}
@@ -103,93 +173,97 @@ export default function Home() {
                   <ArrowImg src={arrow} alt="" />
                   ГОРТАЙ ВНИЗ
                 </ScrollDownLink>
-              </StyledRow>
-            </Column>
-          </SecondPart>
-        </FirstContainer>
-        <SecondContainer>
-          <DescriptionButtonContainer>
-            <Description>Індивідуальна сторінка пам'яті:</Description>
+              </HomeStyledRow>
+            </HomeColumn>
+          </HomeSecondPart>
+        </HomeFirstContainer>
+        <SecondContainer ref={secondRef}>
+          <SecondDescriptionButtonContainer id="down-to-up-anim">
+            <SecondContainerTitle>
+              Індивідуальна сторінка пам'яті:
+            </SecondContainerTitle>
             <Description>
-              Зірка пам'яті - це QR-код для
-              <br /> індивідуально розроблених
-              <br /> меморіальних сторінок. Діліться
-              <br /> біографіями, текстами,
-              <br /> фотографіями, відео та
-              <br />
-              спогадами. QR-код посилається
-              <br /> на персональну сторінку пам'яті.
-              <br />
-              Ідеально підходить для
-              <br /> надгробків та урн.
-              <br /> Формуйте свою пам'ять.
+              Зірка пам'яті - це QR-код для індивідуально розроблених
+              меморіальних сторінок. Діліться біографіями, текстами,
+              фотографіями, відео та спогадами. QR-код посилається на
+              персональну сторінку пам'яті. Ідеально підходить для надгробків та
+              урн. Формуйте свою пам'ять.
             </Description>
-            <Button onClick={() => navigate("/starofmemory")} />
-          </DescriptionButtonContainer>
-          <CardsContainer>
+            <MainButtonContainer>
+              <Button onClick={() => navigate("/starofmemory")} />
+            </MainButtonContainer>
+          </SecondDescriptionButtonContainer>
+          <CardsContainer id="down-to-up-anim">
             <CardRow style={{ marginTop: "0px" }}>
               <StyledTitle>01</StyledTitle>
-              <CardHeader>
-                Мета компанії зберегти
-                <br /> всі дані назавжди
-              </CardHeader>
-              <Description>
-                Зберігайте кожен цінний спогад про своїх
-                <br /> близьких у безпеці
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Мета компанії зберегти
+                  <br /> всі дані назавжди
+                </CardHeader>
+                <Description>
+                  Зберігайте кожен цінний спогад про своїх близьких у безпеці
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
             <CardRow>
               <StyledTitle>02</StyledTitle>
-              <CardHeader>
-                Захист даних
-                <br /> гарантовано
-              </CardHeader>
-              <Description>
-                Ви самі вирішуєте, кому дозволено
-                <br /> дивитися на зірку пам'яті
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Захист даних
+                  <br /> гарантовано
+                </CardHeader>
+                <Description>
+                  Ви самі вирішуєте, кому дозволено дивитися на зірку пам'яті
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
             <CardRow>
               <StyledTitle>03</StyledTitle>
-              <CardHeader>
-                Довговічність зірки
-                <br /> пам'яті
-              </CardHeader>
-              <Description>
-                Як основний матеріал ми використовуємо анодований
-                <br /> алюміній, термін служби мінімум 300 років
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Довговічність зірки
+                  <br /> пам'яті
+                </CardHeader>
+                <Description>
+                  Як основний матеріал ми використовуємо анодований алюміній,
+                  термін служби мінімум 300 років
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
             <CardRow>
               <StyledTitle>04</StyledTitle>
-              <CardHeader>Оплата один раз</CardHeader>
-              <Description>
-                Довічне обслуговування без будь-яких
-                <br /> прихованих витрат або підписних пасток
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>Оплата один раз</CardHeader>
+                <Description>
+                  Довічне обслуговування без будь-яких прихованих витрат або
+                  підписних пасток
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
           </CardsContainer>
+          <MobileMainButtonContainer>
+            <Button onClick={() => navigate("/starofmemory")} />
+          </MobileMainButtonContainer>
         </SecondContainer>
-        <ThirdContainer>
-          <StyledRow>
+        <ThirdContainer ref={thirdRef}>
+          <DescriptionContainer>
             <Title>ZIRKA</Title>
-            <StyledTitle style={{ fontSize: "84px" }}>
+            <OrderTitle id="right-to-left-anim2">
               ПРОЄКТ НАТХНЕННИЙ ТЕОРІЄЮ
               <br /> ПРОДОВЖЕНОГО ЗВ'ЯЗКУ  
-              <StyledTitle
-                style={{ fontSize: "84px", color: colors.primaryBlack }}
-              >
+              <OrderTitle style={{ color: colors.primaryBlack }}>
                 (CONTINUING BONDS THEORY)
-              </StyledTitle>
-            </StyledTitle>
-          </StyledRow>
-          <StyledRow style={{ alignItems: "end" }}>
+              </OrderTitle>
+            </OrderTitle>
+          </DescriptionContainer>
+          <DescriptionContainer>
             <Title>Про проєкт:</Title>
-            <Description>
+            <Description id="right-to-left-anim2">
               Ця теорія стверджує, що замість повного «відпускання» померлого,
               люди
               <br /> можуть продовжувати зберігати з ним емоційний зв'язок. Цей
@@ -201,7 +275,7 @@ export default function Home() {
               але при
               <br /> цьому зберігати його значущість у житті.
             </Description>
-            <Description>
+            <Description id="right-to-left-anim2">
               Основна ідея полягає в тому, що людина не
               <br /> обов'язково повинна «забувати» або «рухатися
               <br /> далі» в традиційному сенсі. Замість цього, вона
@@ -209,25 +283,28 @@ export default function Home() {
               повсякденне життя, що допомагає пом'якшити
               <br /> біль втрати і знайти сенс у новій реальності.
             </Description>
-          </StyledRow>
-          <Row style={{ justifyContent: "flex-end" }}>
-            <ForthImage src={fourthimg} />
-            <OverlayBox>
-              <Row>
-                <StyledTitle style={{ fontSize: "84px", color: "white" }}>
-                  СКАНУВАННЯ
-                  <br /> ЗІРКИ ПАМ'ЯТІ
-                </StyledTitle>
-                <BluredQRCodeImg src={bluredqrcode} alt="" />
-              </Row>
-              <Description style={{ color: "white" }}>
-                Почніть свою подорож зі сканування за допомогою
-                <br /> смартфона. Відкривається вікно у світ, повний
-                <br /> спогадів.
-              </Description>
-            </OverlayBox>
-          </Row>
+          </DescriptionContainer>
         </ThirdContainer>
+        <FourthContainer ref={fourthRef}>
+          <ForthImage src={fourthimg} />
+          <MobileForthImage src={mobilefourthimg} />
+          <OverlayBox id="left-to-right-anim">
+            <HomeRow>
+              <OverlayTitle>
+                СКАНУВАННЯ
+                <br /> ЗІРКИ ПАМ'ЯТІ
+              </OverlayTitle>
+              <BluredQRCodeImg src={bluredqrcode} alt="" />
+            </HomeRow>
+            <OverlayDescription>
+              Почніть свою подорож зі сканування за допомогою смартфона.
+              Відкривається вікно у світ, повний спогадів.
+            </OverlayDescription>
+            <HomeRow>
+              <MobileBluredQRCodeImg src={bluredqrcode} alt="" />
+            </HomeRow>
+          </OverlayBox>
+        </FourthContainer>
         <QAPart />
         <Footer />
       </HomeContainer>

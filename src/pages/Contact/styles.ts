@@ -14,6 +14,10 @@ export const ContactContainerBackground = styled.div`
   width: 100%;
   height: 800px;
   background-color: ${colors.primaryBeige};
+
+  @media (max-width: 768px) {
+    height: 900px;
+  }
 `
 
 export const ContactContainer = styled.div`
@@ -48,7 +52,7 @@ export const DescriptionContainer = styled.div`
   @media (max-width: 768px) {
     gap: 20px;
     margin: 0px;
-    margin-left: 50px;
+    padding-left: 30px;
   }
 `
 
@@ -64,7 +68,7 @@ export const PreTitle = styled.h5`
   }
 `
 
-export const Title = styled.h5`
+export const ContactTitle = styled.h5`
   line-height: 64px;
   font-size: 64px;
   font-weight: 400;
@@ -76,7 +80,7 @@ export const Title = styled.h5`
   }
 `
 
-export const Description = styled.h5`
+export const ContactDescription = styled.h5`
   line-height: 28px;
   font-size: 24px;
   font-weight: 400;
@@ -88,12 +92,12 @@ export const Description = styled.h5`
   }
 `
 
-export const DescriptionSecondPart = styled.h5`
+export const ContactDescriptionSecondPart = styled.h5`
   line-height: 28px;
   font-size: 24px;
   font-weight: 400;
   color: ${colors.primaryBlack};
-  margin-bottom: 70px;
+  margin: 70px 0px;
 
   @media (max-width: 768px) {
     line-height: 16px;
@@ -113,6 +117,17 @@ export const QuestionFormContainer = styled.div`
 
   @media (max-width: 768px) {
     margin: 0px;
-    margin-left: 40px;
+    align-items: center;
+  }
+`
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  margin: 20px 0px;
+  height: 85px;
+  width: 400px;
+
+  @media (max-width: 768px) {
+    width: 260px;
   }
 `

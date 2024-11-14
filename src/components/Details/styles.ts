@@ -13,6 +13,16 @@ export const Info = styled.h4`
   font-size: 16px;
   font-weight: 400;
   color: ${colors.primaryGrey};
+
+  @media (max-width: 768px) {
+    line-height: 24px;
+  }
+`
+
+export const LanguageSelectorContainer = styled.div`
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `
 
 export const LoginLink = styled(Link)<{ isActive: boolean }>`
@@ -22,13 +32,11 @@ export const LoginLink = styled(Link)<{ isActive: boolean }>`
   color: ${({ isActive }) =>
     isActive ? colors.primaryBeige : colors.primaryBlack};
 
-  border-bottom: ${({ isActive }) => (isActive ? "2px solid" : "none")};
-
   &:hover {
     color: ${colors.primaryBeige};
   }
 
-  @media(max-width: 768px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `

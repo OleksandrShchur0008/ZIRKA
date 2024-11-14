@@ -13,7 +13,7 @@ import {
 } from "./styles"
 import { useNavigate } from "react-router-dom"
 import { arrow2 } from "assets"
-import { Line } from "pages/Home/styles"
+import { Line, MainButtonContainer } from "pages/Home/styles"
 
 export default function QAPart() {
   const navigate = useNavigate()
@@ -22,7 +22,9 @@ export default function QAPart() {
       <TitleButtonContainer>
         <Title>Часті питання</Title>
         <Row>
-          <Button onClick={() => navigate("/starofmemory")} />
+          <MainButtonContainer>
+            <Button onClick={() => navigate("/starofmemory")} />
+          </MainButtonContainer>
           <Arrow2Img src={arrow2} alt="" />
         </Row>
       </TitleButtonContainer>
