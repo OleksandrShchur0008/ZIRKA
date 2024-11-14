@@ -35,7 +35,7 @@ export const CallLink = styled(Link)`
   border: 1px solid ${colors.primaryBeige};
   color: ${colors.primaryBeige};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `
@@ -43,7 +43,7 @@ export const CallLink = styled(Link)`
 export const BarContainer = styled.div`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -53,7 +53,7 @@ export const BarContainer = styled.div`
 export const BarImg = styled.img`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     display: flex;
     width: 38px;
     height: 38px;

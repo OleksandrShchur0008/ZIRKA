@@ -31,15 +31,24 @@ import {
   VideosContainer,
   BuyButtonContainer,
   ButtonOnImgContainer,
+  SecondContainerTitle,
+  RowInHeader,
+  MobileThirdContainer,
+  HeaderStyledTitle,
+  VectorImg,
+  Rowv2,
+  OrderStyledRow,
+  StarOfMemoryFirstContainer,
 } from "./styles"
 import {
   CardHeader,
   CardRow,
   CardsContainer,
   Description,
-  FirstContainer,
   ForthImage,
   Line,
+  MobileDescriptionColumn,
+  MobileForthImage,
   SecondContainer,
   StyledTitle,
 } from "pages/Home/styles"
@@ -54,7 +63,10 @@ import {
   avatar6,
   fifthimg,
   fourthimg,
+  mobilefifthimg,
+  mobilefourthimg,
   qrcodeimg,
+  vector,
   video1,
   video2,
   video3,
@@ -76,38 +88,31 @@ export default function StarOfMemory() {
     <StarOfMemoryWrapper>
       <Header />
       <StarOfMemoryContainer>
-        <FirstContainer>
+        <StarOfMemoryFirstContainer>
           <HeaderTitle>
-            <Row>
-              <StyledTitle>УСІ</StyledTitle>
-              <StyledTitle style={{ color: colors.primaryBlack }}>
+            <RowInHeader>
+              <HeaderStyledTitle>УСІ</HeaderStyledTitle>
+              <HeaderStyledTitle style={{ color: colors.primaryBlack }}>
                 &nbsp;ЗАПИСИ, ФОТО ТА
-              </StyledTitle>
-            </Row>
-            <Row>
-              <StyledTitle style={{ color: colors.primaryBlack }}>
+              </HeaderStyledTitle>
+            </RowInHeader>
+            <RowInHeader>
+              <HeaderStyledTitle style={{ color: colors.primaryBlack }}>
                 ВІДЕО&nbsp;
-              </StyledTitle>
-              <StyledTitle>ЗБЕРІГАТИМУТЬСЯ</StyledTitle>
-            </Row>
-            <StyledTitle>ВІЧНІСТЬ</StyledTitle>
+              </HeaderStyledTitle>
+              <HeaderStyledTitle>ЗБЕРІГАТИМУТЬСЯ</HeaderStyledTitle>
+            </RowInHeader>
+            <HeaderStyledTitle>ВІЧНІСТЬ</HeaderStyledTitle>
           </HeaderTitle>
           <ButtonImgContainer>
             <ButtonOnImgContainer>
               <Button onClick={() => navigate("/starofmemory")} />
             </ButtonOnImgContainer>
             <ForthImage src={fourthimg} />
+            <MobileForthImage src={mobilefourthimg} />
           </ButtonImgContainer>
-          <StyledTitle
-            style={{
-              fontSize: "190px",
-              margin: "0px 0px 100px 0px",
-              textAlign: "center",
-            }}
-          >
-            ВСЕ ЯК НА ДОЛОНІ
-          </StyledTitle>
-        </FirstContainer>
+          <SecondContainerTitle>ВСЕ ЯК НА ДОЛОНІ</SecondContainerTitle>
+        </StarOfMemoryFirstContainer>
         <SecondContainer style={{ height: "1100px" }}>
           <QRCodeImgContainer>
             <QRCodeImg src={qrcodeimg} alt="" />
@@ -115,92 +120,94 @@ export default function StarOfMemory() {
           <CardsContainer>
             <CardRow>
               <StyledTitle>01</StyledTitle>
-              <CardHeader>
-                Можливості для
-                <br /> пам'ятних записів
-              </CardHeader>
-              <Description>
-                Більше, ніж просто QR-код: Наша зірка
-                <br /> пам'яті поставляється з меморіальною
-                <br /> сторінкою, яку ви можете налаштувати.
-                <br /> Поділіться біографією, фотографіями та
-                <br /> відео - скільки завгодно. Інші люди також
-                <br /> можуть висловити свої співчуття і зробити
-                <br /> внесок на меморіальній сторінці. Тільки ви і<br /> люди,
-                яких ви запросили, можете вносити
-                <br /> зміни на сторінку пам'яті.
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Можливості для
+                  <br /> пам'ятних записів
+                </CardHeader>
+                <Description>
+                  Більше, ніж просто QR-код: Наша зірка пам'яті поставляється з
+                  меморіальною сторінкою, яку ви можете налаштувати. Поділіться
+                  біографією, фотографіями та відео - скільки завгодно. Інші
+                  люди також можуть висловити свої співчуття і зробити внесок на
+                  меморіальній сторінці. Тільки ви і люди, яких ви запросили,
+                  можете вносити зміни на сторінку пам'яті.
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
             <CardRow>
               <StyledTitle>02</StyledTitle>
-              <CardHeader>
-                Необмежений
-                <br /> обсяг пам'яті
-              </CardHeader>
-              <Description>
-                Насолоджуйтесь необмеженим сховищем
-                <br /> для всіх ваших спогадів. Кількість
-                <br /> фотографій, відео та аудіофайлів також не
-                <br /> обмежена.
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Необмежений
+                  <br /> обсяг пам'яті
+                </CardHeader>
+                <Description>
+                  Насолоджуйтесь необмеженим сховищем для всіх ваших спогадів.
+                  Кількість фотографій, відео та аудіофайлів також не обмежена.
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
             <CardRow>
               <StyledTitle>03</StyledTitle>
-              <CardHeader>
-                Приватний та
-                <br /> публічний режим
-              </CardHeader>
-              <Description>
-                Ви можете вибрати між приватним і публічним
-                <br /> профілем. У публічному режимі профіль стає видимим
-                <br /> для всіх одразу після сканування QR-коду. У<br />{" "}
-                приватному режимі відвідувачі профілю мають
-                <br /> можливість увійти за допомогою логіна і пароля.
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Приватний та
+                  <br /> публічний режим
+                </CardHeader>
+                <Description>
+                  Ви можете вибрати між приватним і публічним профілем. У
+                  публічному режимі профіль стає видимим для всіх одразу після
+                  сканування QR-коду. У приватному режимі відвідувачі профілю
+                  мають можливість увійти за допомогою логіна і пароля.
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
             <CardRow>
               <StyledTitle>04</StyledTitle>
-              <CardHeader>
-                Безпека в разі крадіжки
-                <br /> або пошкодження
-              </CardHeader>
-              <Description>
-                Зірка пам'яті виготовлена з нержавіючого
-                <br /> алюмінію і є стійкою до атмосферних
-                <br /> впливів. В якості клею ми використовуємо
-                <br /> запатентовану плівку 3М, яка витримує
-                <br /> будь-які температури та погодні умови.
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Безпека в разі крадіжки
+                  <br /> або пошкодження
+                </CardHeader>
+                <Description>
+                  Зірка пам'яті виготовлена з нержавіючого алюмінію і є стійкою
+                  до атмосферних впливів. В якості клею ми використовуємо
+                  запатентовану плівку 3М, яка витримує будь-які температури та
+                  погодні умови.
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
             <CardRow>
               <StyledTitle>05</StyledTitle>
-              <CardHeader>
-                Одноразовий платіж за довічне обслуговування
-              </CardHeader>
-              <Description>
-                Здійснивши одноразовий платіж, ви
-                <br /> отримуєте довічний доступ до сторінок
-                <br /> пам'яті без додаткових витрат.
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Одноразовий платіж за довічне обслуговування
+                </CardHeader>
+                <Description>
+                  Здійснивши одноразовий платіж, ви отримуєте довічний доступ до
+                  сторінок пам'яті без додаткових витрат.
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
           </CardsContainer>
         </SecondContainer>
         <ThirdContainer>
           <FirstPart>
-            <StyledRow>
+            <OrderStyledRow>
               <Title>ZIRKA</Title>
               <StarText>Зірка пам'яті</StarText>
-            </StyledRow>
+            </OrderStyledRow>
             <FifthImg src={fifthimg} />
           </FirstPart>
           <SecondPart>
             <OrderTitle>ОФОРМИТИ ЗАМОВЛЕННЯ:</OrderTitle>
-            <StyledRow style={{ margin: "30px 0px 190px 0px" }}>
+            <OrderStyledRow style={{ margin: "30px 0px 190px 0px" }}>
               <Description>
                 Придбано понад 2187
                 <br /> разів за останні 2 місяці
@@ -209,15 +216,15 @@ export default function StarOfMemory() {
                 Збережіть найдорожчі спогади на вічність
                 <br /> і поділіться ними зі своїми близькими
               </Description>
-            </StyledRow>
+            </OrderStyledRow>
             <OrderWithoutDiscountPrice>₴2,050.00 UAH</OrderWithoutDiscountPrice>
-            <StyledRow>
+            <OrderStyledRow>
               <OrderDiscountPrice>₴1,290.00 UAH</OrderDiscountPrice>
               <BuyButtonContainer>
                 <Button name="ПРИДБАТИ" />
               </BuyButtonContainer>
-            </StyledRow>
-            <StyledRow>
+            </OrderStyledRow>
+            <OrderStyledRow>
               <OrderDescription>
                 Знижка -40% на зірку пам'яті до 30.09
               </OrderDescription>
@@ -225,19 +232,45 @@ export default function StarOfMemory() {
                 Податки включені. Вартість доставки 
                 <br /> розраховується при оформленні замовлення.
               </OrderDescription>
-              <OrderDescription></OrderDescription>
-            </StyledRow>
+            </OrderStyledRow>
           </SecondPart>
         </ThirdContainer>
+        <MobileThirdContainer>
+          <Description>
+            Придбано понад 2187
+            <br /> разів за останні 2 місяці
+          </Description>
+          <OrderTitle>ОФОРМИТИ ЗАМОВЛЕННЯ:</OrderTitle>
+          <Description>
+            Збережіть найдорожчі спогади на вічність
+            <br /> і поділіться ними зі своїми близькими
+          </Description>
+          <FifthImg src={mobilefifthimg} />
+          <OrderWithoutDiscountPrice>₴2,050.00 UAH</OrderWithoutDiscountPrice>
+          <OrderDiscountPrice>₴1,290.00 UAH</OrderDiscountPrice>
+          <BuyButtonContainer>
+            <Button name="ПРИДБАТИ" />
+          </BuyButtonContainer>
+          <OrderDescription>
+            Знижка -40% на зірку пам'яті до 30.09
+          </OrderDescription>
+          <OrderDescription>
+            Податки включені. Вартість доставки 
+            <br /> розраховується при оформленні замовлення.
+          </OrderDescription>
+        </MobileThirdContainer>
         <FourthContainer>
           <div>
             <StyledTitlev2>Реальні відгуки</StyledTitlev2>
-            <Row>
-              <StyledTitlev2>клієнтів про</StyledTitlev2>
-              <StyledTitlev2 style={{ color: colors.primaryBeige }}>
-                &nbsp;ZIRKA
-              </StyledTitlev2>
-            </Row>
+            <StyledRow>
+              <Row>
+                <StyledTitlev2>клієнтів про</StyledTitlev2>
+                <StyledTitlev2 style={{ color: colors.primaryBeige }}>
+                  &nbsp;ZIRKA
+                </StyledTitlev2>
+              </Row>
+              <VectorImg src={vector} alt="" />
+            </StyledRow>
           </div>
           <CardsBox>
             <Card>
@@ -319,10 +352,12 @@ export default function StarOfMemory() {
           <div>
             <StyledTitlev2>Реальні відгуки</StyledTitlev2>
             <StyledRow>
-              <StyledTitlev2>клієнтів про</StyledTitlev2>
-              <StyledTitlev2 style={{ color: colors.primaryBeige }}>
-                &nbsp;ZIRKA
-              </StyledTitlev2>
+              <Rowv2>
+                <StyledTitlev2>клієнтів про</StyledTitlev2>
+                <StyledTitlev2 style={{ color: colors.primaryBeige }}>
+                  &nbsp;ZIRKA
+                </StyledTitlev2>
+              </Rowv2>
               <ButtonsContainer>
                 <ArrowButton onClick={() => toggleContent("left")}>
                   <Arrows src={arrowleft} />

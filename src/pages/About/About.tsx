@@ -4,11 +4,11 @@ import {
   ContentWrapper,
   ButtonsContainer,
   Description,
-  FirstContainer,
-  MainContent,
+  AboutFirstContainer,
+  AboutMainContent,
   ArrowButton,
   PhoneImg,
-  StyledTitle,
+  AboutStyledTitle,
   Title,
   FirstContentToChange,
   SecondContentToChange,
@@ -40,10 +40,10 @@ export default function About() {
   return (
     <AboutWrapper>
       <Header />
-      <FirstContainer>
+      <AboutFirstContainer>
         <PhoneImg src={phone} />
-        <MainContent>
-          <StyledTitle>ZIRKA</StyledTitle>
+        <AboutMainContent>
+          <AboutStyledTitle>ZIRKA</AboutStyledTitle>
           <ContentWrapper>
             <FirstContentToChange isAlternate={isAlternate}>
               <Title>{firstContent.title}</Title>
@@ -62,8 +62,8 @@ export default function About() {
               <Arrows src={arrowright} />
             </ArrowButton>
           </ButtonsContainer>
-        </MainContent>
-      </FirstContainer>
+        </AboutMainContent>
+      </AboutFirstContainer>
       <QAPartContainer>
         <QAPart />
       </QAPartContainer>

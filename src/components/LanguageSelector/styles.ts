@@ -13,6 +13,11 @@ export const LanguageButton = styled.button`
   font-size: 16px;
   padding: 5px;
   color: ${colors.primaryBlack};
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    color: white;
+  }
 `
 
 export const Dropdown = styled.div`
@@ -32,5 +37,9 @@ export const LanguageOption = styled.button`
 
   &:hover {
     color: ${colors.primaryBeige};
+  }
+
+  @media (max-width: 768px) {
+    color: white;
   }
 `

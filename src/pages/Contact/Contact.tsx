@@ -4,12 +4,12 @@ import {
   ContactContainer,
   ContactContainerBackground,
   ContactWrapper,
-  Description,
+  ContactDescription,
   DescriptionContainer,
-  DescriptionSecondPart,
+  ContactDescriptionSecondPart,
   PreTitle,
   QuestionFormContainer,
-  Title,
+  ContactTitle,
 } from "./styles"
 
 export default function Contact() {
@@ -20,19 +20,19 @@ export default function Contact() {
         <ContactContainer>
           <DescriptionContainer>
             <PreTitle>ЗАЛИШАЙ ЗАЯВКУ</PreTitle>
-            <Title>
+            <ContactTitle>
               У вас є <br /> запитання?
-            </Title>
-            <Description>
+            </ContactTitle>
+            <ContactDescription>
               Ми тут, щоб допомогти! Просто
               <br /> заповніть контактну форму
               <br /> нижче, і ми зв'яжемося з вами
               <br /> якомога швидше.
-            </Description>
-            <DescriptionSecondPart>
+            </ContactDescription>
+            <ContactDescriptionSecondPart>
               Або зателефонуйте за номером:
               <br /> +380965175595
-            </DescriptionSecondPart>
+            </ContactDescriptionSecondPart>
           </DescriptionContainer>
           <QuestionFormContainer>
             <Input placeholder="Ім'я" />

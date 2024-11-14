@@ -2,18 +2,16 @@ import { Button, Footer, Header, QAPart } from "components"
 import {
   FirstImage,
   HomeWrapper,
-  FirstContainer,
+  HomeFirstContainer,
   SecondImage,
   ThirdImage,
   StyledTitle,
-  DescriptionButtonContainer,
+  FirstDescriptionButtonContainer,
   Description,
-  FirstPart,
-  SecondPart,
-  Row,
-  Column,
+  HomeFirstPart,
+  HomeRow,
+  HomeColumn,
   ScrollDownLink,
-  StyledRow,
   SecondContainer,
   CardsContainer,
   ThirdContainer,
@@ -26,12 +24,27 @@ import {
   Line,
   HomeContainer,
   MainButtonContainer,
+  MobileDescriptionColumn,
+  MobileForthImage,
+  FourthContainer,
+  OverlayTitle,
+  MobileBluredQRCodeImg,
+  OverlayDescription,
+  DescriptionContainer,
+  MobileMainButtonContainer,
+  HomeSecondPart,
+  HomeStyledRow,
+  SecondContainerTitle,
+  SecondDescriptionButtonContainer,
+  MobileImagesContainer,
+  MobileSharedStyleImage,
 } from "./styles"
 import {
   arrow,
   bluredqrcode,
   firstimg,
   fourthimg,
+  mobilefourthimg,
   secondimg,
   thirdimg,
 } from "assets"
@@ -41,6 +54,7 @@ import { Title } from "components/Header/styles"
 import { useInView } from "react-intersection-observer"
 import { useEffect } from "react"
 import gsap from "gsap"
+import { OrderTitle } from "pages/StarOfMemory/styles"
 
 export default function Home() {
   const navigate = useNavigate()
@@ -61,7 +75,7 @@ export default function Home() {
     e.preventDefault()
 
     window.scrollBy({
-      top: 1000,
+      top: 888,
       behavior: "smooth",
     })
   }
@@ -70,22 +84,22 @@ export default function Home() {
     <HomeWrapper>
       <Header />
       <HomeContainer>
-        <FirstContainer ref={ref}>
-          <FirstPart>
-            <Row id="spogady-text">
+        <HomeFirstContainer ref={ref}>
+          <HomeFirstPart>
+            <HomeRow id="spogady-text">
               <StyledTitle>СПОГАДИ</StyledTitle>
               <StyledTitle style={{ color: colors.primaryBlack }}>
                 &nbsp;НА ВІКИ
               </StyledTitle>
-            </Row>
+            </HomeRow>
             <ThirdImage src={thirdimg} />
-          </FirstPart>
-          <SecondPart>
+          </HomeFirstPart>
+          <HomeSecondPart>
             <FirstImage src={firstimg} />
-            <Column>
+            <HomeColumn>
               <StyledTitle>ЗІРКА ПАМ'ЯТІ</StyledTitle>
-              <StyledRow>
-                <DescriptionButtonContainer>
+              <HomeStyledRow>
+                <FirstDescriptionButtonContainer>
                   <Description>
                     Проєкт натхненний теорією
                     <br />
@@ -96,7 +110,15 @@ export default function Home() {
                   <MainButtonContainer>
                     <Button onClick={() => navigate("/starofmemory")} />
                   </MainButtonContainer>
-                </DescriptionButtonContainer>
+                  <MobileImagesContainer>
+                    <MobileSharedStyleImage src={secondimg} />
+                    <MobileSharedStyleImage src={firstimg} />
+                    <MobileSharedStyleImage src={thirdimg} />
+                  </MobileImagesContainer>
+                  <MobileMainButtonContainer>
+                    <Button onClick={() => navigate("/starofmemory")} />
+                  </MobileMainButtonContainer>
+                </FirstDescriptionButtonContainer>
                 <SecondImage src={secondimg} />
                 <ScrollDownLink
                   to={""}
@@ -106,93 +128,95 @@ export default function Home() {
                   <ArrowImg src={arrow} alt="" />
                   ГОРТАЙ ВНИЗ
                 </ScrollDownLink>
-              </StyledRow>
-            </Column>
-          </SecondPart>
-        </FirstContainer>
+              </HomeStyledRow>
+            </HomeColumn>
+          </HomeSecondPart>
+        </HomeFirstContainer>
         <SecondContainer>
-          <DescriptionButtonContainer>
-            <Description>Індивідуальна сторінка пам'яті:</Description>
+          <SecondDescriptionButtonContainer>
+            <SecondContainerTitle>
+              Індивідуальна сторінка пам'яті:
+            </SecondContainerTitle>
             <Description>
-              Зірка пам'яті - це QR-код для
-              <br /> індивідуально розроблених
-              <br /> меморіальних сторінок. Діліться
-              <br /> біографіями, текстами,
-              <br /> фотографіями, відео та
-              <br />
-              спогадами. QR-код посилається
-              <br /> на персональну сторінку пам'яті.
-              <br />
-              Ідеально підходить для
-              <br /> надгробків та урн.
-              <br /> Формуйте свою пам'ять.
+              Зірка пам'яті - це QR-код для індивідуально розроблених
+              меморіальних сторінок. Діліться біографіями, текстами,
+              фотографіями, відео та спогадами. QR-код посилається на
+              персональну сторінку пам'яті. Ідеально підходить для надгробків та
+              урн. Формуйте свою пам'ять.
             </Description>
             <MainButtonContainer>
               <Button onClick={() => navigate("/starofmemory")} />
             </MainButtonContainer>
-          </DescriptionButtonContainer>
+          </SecondDescriptionButtonContainer>
           <CardsContainer>
             <CardRow style={{ marginTop: "0px" }}>
               <StyledTitle>01</StyledTitle>
-              <CardHeader>
-                Мета компанії зберегти
-                <br /> всі дані назавжди
-              </CardHeader>
-              <Description>
-                Зберігайте кожен цінний спогад про своїх
-                <br /> близьких у безпеці
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Мета компанії зберегти
+                  <br /> всі дані назавжди
+                </CardHeader>
+                <Description>
+                  Зберігайте кожен цінний спогад про своїх близьких у безпеці
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
             <CardRow>
               <StyledTitle>02</StyledTitle>
-              <CardHeader>
-                Захист даних
-                <br /> гарантовано
-              </CardHeader>
-              <Description>
-                Ви самі вирішуєте, кому дозволено
-                <br /> дивитися на зірку пам'яті
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Захист даних
+                  <br /> гарантовано
+                </CardHeader>
+                <Description>
+                  Ви самі вирішуєте, кому дозволено дивитися на зірку пам'яті
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
             <CardRow>
               <StyledTitle>03</StyledTitle>
-              <CardHeader>
-                Довговічність зірки
-                <br /> пам'яті
-              </CardHeader>
-              <Description>
-                Як основний матеріал ми використовуємо анодований
-                <br /> алюміній, термін служби мінімум 300 років
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>
+                  Довговічність зірки
+                  <br /> пам'яті
+                </CardHeader>
+                <Description>
+                  Як основний матеріал ми використовуємо анодований алюміній,
+                  термін служби мінімум 300 років
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
             <CardRow>
               <StyledTitle>04</StyledTitle>
-              <CardHeader>Оплата один раз</CardHeader>
-              <Description>
-                Довічне обслуговування без будь-яких
-                <br /> прихованих витрат або підписних пасток
-              </Description>
+              <MobileDescriptionColumn>
+                <CardHeader>Оплата один раз</CardHeader>
+                <Description>
+                  Довічне обслуговування без будь-яких прихованих витрат або
+                  підписних пасток
+                </Description>
+              </MobileDescriptionColumn>
             </CardRow>
             <Line />
           </CardsContainer>
+          <MobileMainButtonContainer>
+            <Button onClick={() => navigate("/starofmemory")} />
+          </MobileMainButtonContainer>
         </SecondContainer>
         <ThirdContainer>
-          <StyledRow>
+          <DescriptionContainer>
             <Title>ZIRKA</Title>
-            <StyledTitle style={{ fontSize: "84px" }}>
+            <OrderTitle>
               ПРОЄКТ НАТХНЕННИЙ ТЕОРІЄЮ
               <br /> ПРОДОВЖЕНОГО ЗВ'ЯЗКУ  
-              <StyledTitle
-                style={{ fontSize: "84px", color: colors.primaryBlack }}
-              >
+              <OrderTitle style={{ color: colors.primaryBlack }}>
                 (CONTINUING BONDS THEORY)
-              </StyledTitle>
-            </StyledTitle>
-          </StyledRow>
-          <StyledRow style={{ alignItems: "end" }}>
+              </OrderTitle>
+            </OrderTitle>
+          </DescriptionContainer>
+          <DescriptionContainer>
             <Title>Про проєкт:</Title>
             <Description>
               Ця теорія стверджує, що замість повного «відпускання» померлого,
@@ -214,25 +238,28 @@ export default function Home() {
               повсякденне життя, що допомагає пом'якшити
               <br /> біль втрати і знайти сенс у новій реальності.
             </Description>
-          </StyledRow>
-          <Row style={{ justifyContent: "flex-end" }}>
-            <ForthImage src={fourthimg} />
-            <OverlayBox>
-              <Row>
-                <StyledTitle style={{ fontSize: "84px", color: "white" }}>
-                  СКАНУВАННЯ
-                  <br /> ЗІРКИ ПАМ'ЯТІ
-                </StyledTitle>
-                <BluredQRCodeImg src={bluredqrcode} alt="" />
-              </Row>
-              <Description style={{ color: "white" }}>
-                Почніть свою подорож зі сканування за допомогою
-                <br /> смартфона. Відкривається вікно у світ, повний
-                <br /> спогадів.
-              </Description>
-            </OverlayBox>
-          </Row>
+          </DescriptionContainer>
         </ThirdContainer>
+        <FourthContainer>
+          <ForthImage src={fourthimg} />
+          <MobileForthImage src={mobilefourthimg} />
+          <OverlayBox>
+            <HomeRow>
+              <OverlayTitle>
+                СКАНУВАННЯ
+                <br /> ЗІРКИ ПАМ'ЯТІ
+              </OverlayTitle>
+              <BluredQRCodeImg src={bluredqrcode} alt="" />
+            </HomeRow>
+            <OverlayDescription>
+              Почніть свою подорож зі сканування за допомогою смартфона.
+              Відкривається вікно у світ, повний спогадів.
+            </OverlayDescription>
+            <HomeRow>
+              <MobileBluredQRCodeImg src={bluredqrcode} alt="" />
+            </HomeRow>
+          </OverlayBox>
+        </FourthContainer>
         <QAPart />
         <Footer />
       </HomeContainer>

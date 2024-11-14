@@ -37,7 +37,6 @@ export const ContactContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
   }
 `
 
@@ -69,7 +68,7 @@ export const PreTitle = styled.h5`
   }
 `
 
-export const Title = styled.h5`
+export const ContactTitle = styled.h5`
   line-height: 64px;
   font-size: 64px;
   font-weight: 400;
@@ -81,7 +80,7 @@ export const Title = styled.h5`
   }
 `
 
-export const Description = styled.h5`
+export const ContactDescription = styled.h5`
   line-height: 28px;
   font-size: 24px;
   font-weight: 400;
@@ -93,7 +92,7 @@ export const Description = styled.h5`
   }
 `
 
-export const DescriptionSecondPart = styled.h5`
+export const ContactDescriptionSecondPart = styled.h5`
   line-height: 28px;
   font-size: 24px;
   font-weight: 400;

@@ -7,7 +7,7 @@ export const AboutWrapper = styled.div`
   width: 100%;
 `
 
-export const FirstContainer = styled.div`
+export const AboutFirstContainer = styled.div`
   display: flex;
   width: 100%;
   min-height: 1000px;
@@ -32,14 +32,14 @@ export const PhoneImg = styled.img`
   }
 `
 
-export const MainContent = styled.div`
+export const AboutMainContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 50px;
 `
 
-export const StyledTitle = styled.h2`
+export const AboutStyledTitle = styled.h2`
   height: 100px;
   font-size: 96px;
   font-weight: 400;
@@ -74,7 +74,7 @@ export const FirstContentToChange = styled.div<{ isAlternate: boolean }>`
     opacity 0.8s ease,
     transform 0.8s ease;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1400px) {
     line-height: 16px;
     font-size: 14px;
     display: ${({ isAlternate }) => (isAlternate ? "none" : "translateX(0)")};
@@ -95,7 +95,7 @@ export const SecondContentToChange = styled.div<{ isAlternate: boolean }>`
     opacity 0.8s ease,
     transform 0.8s ease;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1400px) {
     line-height: 16px;
     font-size: 14px;
     display: ${({ isAlternate }) => (isAlternate ? "translateX(0)" : "none")};
