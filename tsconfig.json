@@ -6,7 +6,7 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "skipLibCheck": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true, //was false
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "module": "ESNext",
@@ -16,9 +16,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["vitest/globals"],
-    "declaration": false
+    "declaration": false,
   },
-  "exclude": ["node_modules", "vite.config.d.ts"],
+  "exclude": ["node_modules", "vite.config.d.ts", "vite.config.ts"],
   "incldue": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
